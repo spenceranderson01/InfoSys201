@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <style>
+        .overlay-bar {
+            display: none;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            z-index: 1000;
+        }
+        .overlay-boxes {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .overlay-box {
+            padding: 8px 16px;
+            cursor: pointer;
+            color: #ffcc99; 
+        }
+        
+        .main-title {
+            text-align: center;
+            font-size: 3em;
+            margin-top: 20px;
+            font-weight: bold;
+            color: #003300;
+        }
+        
+        .image-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            background-color: #ffe5cc; 
+            padding: 20px;
+        }
+        .image {
+            max-width: 300px;
+            height: 200px;
+            margin: 10px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+        .youtube-video {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay-bar">
+        <div class="overlay-boxes">
+            <a href="index.html" class="overlay-box">Home</a> 
+            <a href="resume.html" target="_blank" class="overlay-box">Resume</a>
+            <a href="aboutme.html" target="_blank" class="overlay-box">About Me</a>
+            <a href="tableau.html" target="_blank" class="overlay-box">Tableau</a>
+        </div>
+    </div>
+
+    <div class="main-title">
+        Spencer J. Anderson
+    </div>
+
+    <div class="image-section">
+        <img class="image" src="/Users/spenceranderson/IS220HTML/images/coast.jpeg" alt="Coast Image">
+        <img class="image" src="/Users/spenceranderson/IS220HTML/images/Stockholm.jpg" alt="Stockholm Image">
+        
+        <div class="youtube-video">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/-rJ55fp1JlY" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+        <img class="image" src="/Users/spenceranderson/IS220HTML/images/mtranier.jpg" alt="Mt. Ranier Image">
+        <img class="image" src="/Users/spenceranderson/IS220HTML/images/Moscow.jpg" alt="Moscow Image">
+    </div>
+
+    <script>
+        let lastScroll = 0;
+        window.addEventListener("scroll", function() {
+            const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+            if (currentScroll > lastScroll) {
+                document.querySelector(".overlay-bar").style.display = "block";
+            } else {
+                document.querySelector(".overlay-bar").style.display = "none";
+            }
+            lastScroll = currentScroll;
+        });
+    </script>
+</body>
+</html>
